@@ -1,5 +1,6 @@
 package score4game;
 
+//Colour should be set up so then we represents an actual colour that will be for the bead
 enum Colour {
     BLACK ('B'),
     WHITE ('W');

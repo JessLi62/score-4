@@ -2,7 +2,7 @@ package score4game;
 
 //Tested
 public class DiagonalSingleSkew extends Lines  {
-    
+    //change so then it examines colours instead of chars?
     @Override
     public boolean isWhiteLine(Board board){
         String line = "",

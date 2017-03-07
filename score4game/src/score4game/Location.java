@@ -1,7 +1,7 @@
 package score4game;
 
-
 public class Location {
+    
     private char myRow;
     private int myColumn;
     private static final char [] rowChar = {'a','b','c','d','e','f','g'};
@@ -23,7 +23,8 @@ public class Location {
                 return i;
         }
         
-        //throw exception?
+        //throw exception? 
+        //might not need exception if player is using actionlistening and AI is all controlled
         return -99;
     }
     

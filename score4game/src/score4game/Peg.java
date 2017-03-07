@@ -1,15 +1,7 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package score4game;
 
-/**
- *
- * @author Asif
- */
 public class Peg {
+    
     private  final char [] peg;
     private Location myLocation;
     
@@ -20,11 +12,14 @@ public class Peg {
     }
     
     public void addBead(Colour color){
+        //should make so player can't click on a full peg and
+        //AI can't add or even generate a full peg number
 //        if(isFull())
-//            //throw exception
+//            throw exception
 //        ;
         
         for (int i = 0; i < peg.length; i++)
+            //change this when actionlistener in place
             if (peg[i]== 'n'){ //n represents a blank in the peg
                 peg[i]= color.getColorChar();
                 return;
@@ -35,9 +30,11 @@ public class Peg {
         myLocation = new Location (row,column);
     }
     
+    //change to Colours instead of chars?
     public char getBeadColorLetter(int i){
         return (peg[i]);
     }
+    
     public Location getLocation(){
         return myLocation; 
     }

@@ -1,3 +1,4 @@
+//needs a lot of work
 package score4game;
 
 import java.util.Scanner;
@@ -25,7 +26,7 @@ public class Referee {
         PrintWriter consoleWriter;
         PrintWriter consoleWriter2;
         PrintWriter aiWriter;
-        System.out.println("enter color");
+        System.out.print("enter color: ");
         //JavaPipe myAiPlayer = new JavaPipe ("Game Responder");
         
         Scanner keyboardInput = new Scanner (System.in);
@@ -49,7 +50,7 @@ public class Referee {
 //            aiColor = player1.getOppositePlayerColor().getColorChar();
 //            Player player2 = new Player (aiColor, aiReader, aiWriter);
             
-            Game myGame = new Game (4);
+            Game myGame = new Game(); //initialize the game
             
             consoleWriter2.flush();
             if (player1.getColor() == Colour.WHITE){

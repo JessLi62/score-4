@@ -1,3 +1,4 @@
+//can be removed?
 package score4game;
 
 public class TestGame {
@@ -9,7 +10,7 @@ public class TestGame {
         System.out.println(myLocation);
 
 
-        Board myBoard = new Board(4);
+        Board myBoard = new Board();
         myBoard.addBead(myLocation, color2);
         myBoard.addBead(myLocation, color1);
         myBoard.displayBoard();

@@ -4,25 +4,23 @@ public class Game {
     private Board myBoard;
     private Player blackPlayer;
     private Player whitePlayer;
-    //private Location currentLocation;//Do I need current Location?
     private boolean isDraw = false;
     private boolean isFinished = false;
     private Lines[] myLines;
-    private int noOfMoves;
+    private int numberOfMoves;
     
-    
-    public Game(int boardSize){
-        noOfMoves = 0;
-        myBoard = new Board (boardSize);
+    //keep board size to 4*4
+    public Game(){
+        numberOfMoves = 0;
+        myBoard = new Board (); //create a board
         myLines = new Lines[]{new HorizontalLines(), new VerticalLines(), new StraightDiagonalLines(),
                     new DiagonalSingleSkew(), new DiagonalDoubleSkew()};
     }
     
     public void makeMove(String location, Player current){
-        //currentLocation = new Location (location);
-        myBoard.addBead(new Location (location), current.getColor());
-        noOfMoves++;
-        if (noOfMoves % 2 == 0)
+        myBoard.addBead(new Location (location), current.getColor()); //Board class, add bead method
+        numberOfMoves++;
+        if (numberOfMoves % 2 == 0)
             isBlackWin();
         else
             isWhiteWin();
@@ -58,7 +56,7 @@ public class Game {
     }
     
     public boolean isDraw(){
-        if (Lines.getDeadLines() == 76 || noOfMoves == 64)
+        if (Lines.getDeadLines() == 76 || numberOfMoves == 64)
             isDraw = true;
         return isDraw;
     }
@@ -69,6 +67,7 @@ public class Game {
         return blackPlayer;
     }
     
+    //remove when we get GUI working
     public void displayBoard(){
         myBoard.displayBoard();
     }

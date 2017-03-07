@@ -1,15 +1,13 @@
 package score4game;
 
 public class Board {
-    private final int myLength;
+    private final int myLength = 4;
     private final Peg [][] myGrid;
     
-    public Board (int length){
-        myLength = length;
-        myGrid = new Peg [myLength][myLength];
+    public Board (){
+        myGrid = new Peg [myLength][myLength]; //create a 4*4 board grid
 
         for (int i = 0; i < myLength; i++){
-            //Arrays.fill(myGrid[i], new Peg(myLength));
            for (int j = 0; j < myLength; j++)
                myGrid[i][j] = new Peg(myLength);
         }
@@ -19,6 +17,7 @@ public class Board {
                myGrid[i][j].addLocation(i, j);
     }
 
+    //action listeners for player adding bead with click?
     public void addBead (Location location, Colour color){
         for (int i = 0; i < myLength; i++)
             for (int j = 0; j < myLength; j++)
@@ -26,7 +25,6 @@ public class Board {
                     myGrid[i][j].addBead(color);
                     return;
                 }
-        //Throw exception for incorrect location
     }
 
     public int getMyLength(){
