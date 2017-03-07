@@ -1,14 +1,5 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package score4game;
 
-/**
- *
- * @author Asif
- */
 import java.util.Scanner;
 import java.io.PrintWriter;
 
@@ -49,7 +40,7 @@ public class Referee {
             Game myGame = new Game (4);
             
             consoleWriter2.flush();
-            if (player1.getColor() == Color.WHITE){
+            if (player1.getColor() == Colour.WHITE){
                 currentPlayer = player1;
                 myGame.addPlayers(player1, player2);
             }

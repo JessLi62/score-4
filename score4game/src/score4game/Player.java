@@ -12,25 +12,25 @@ import java.util.Scanner;
  * @author Asif
  */
 public class Player {
-    private Color myColor;
+    private Colour myColor;
     private PrintWriter myWriter;
     private Scanner myReader;
     
     public Player (char color, Scanner scanner, PrintWriter printWriter){
         if (color == 'b')
-            myColor = Color.BLACK;
+            myColor = Colour.BLACK;
         else
-            myColor = Color.WHITE;
+            myColor = Colour.WHITE;
         
         myWriter = printWriter;
         myReader = scanner;
     }
     
-    public Color getColor(){
+    public Colour getColor(){
         return myColor;
     }
     
-    public Color getOppositePlayerColor(){
+    public Colour getOppositePlayerColor(){
         return myColor.getOppositeColor();
     }
     

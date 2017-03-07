@@ -19,13 +19,13 @@ public class Peg {
             peg[i] = 'n';
     }
     
-    public void addBead(Color color){
-        if(isFull())
-            //throw exception
-        ;
+    public void addBead(Colour color){
+//        if(isFull())
+//            //throw exception
+//        ;
         
         for (int i = 0; i < peg.length; i++)
-            if (peg[i]== 'n'){
+            if (peg[i]== 'n'){ //n represents a blank in the peg
                 peg[i]= color.getColorChar();
                 return;
             }
@@ -41,7 +41,6 @@ public class Peg {
     public Location getLocation(){
         return myLocation; 
     }
-    
     
     public String toString(){
         String beads ="";

@@ -1,12 +1,12 @@
 package score4game;
 
-enum Color {
+enum Colour {
     BLACK ('B'),
     WHITE ('W');
 
     private char colorChar;
 
-    Color (char color){
+    Colour (char color){
         this.colorChar = color;
     }
 
@@ -14,11 +14,11 @@ enum Color {
         return colorChar;
     }
 
-    public Color getOppositeColor(){
-        if (this == Color.BLACK)
-            return Color.WHITE;
+    public Colour getOppositeColor(){
+        if (this == Colour.BLACK)
+            return Colour.WHITE;
         else
-            return Color.BLACK;
+            return Colour.BLACK;
 
     }
 }

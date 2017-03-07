@@ -15,7 +15,6 @@ public class Location {
     private static final char [] rowChar = {'a','b','c','d','e','f','g'};
     
     public Location (int row, int column){
-       
         myRow = rowChar [row];
         myColumn = column;
     }

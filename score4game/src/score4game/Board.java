@@ -1,14 +1,9 @@
 package score4game;
 
-import java.awt.Color;
-
 public class Board {
     private final int myLength;
     private final Peg [][] myGrid;
-
-
-
-    @SuppressWarnings("empty-statement")
+    
     public Board (int length){
         myLength = length;
         myGrid = new Peg [myLength][myLength];
@@ -21,10 +16,10 @@ public class Board {
 
         for (int i = 0; i < myLength; i++)
             for (int j = 0; j < myLength; j++)
-               myGrid[i][j].addLocation(i, j); ;
+               myGrid[i][j].addLocation(i, j);
     }
 
-    public void addBead (Location location, Color color){
+    public void addBead (Location location, Colour color){
         for (int i = 0; i < myLength; i++)
             for (int j = 0; j < myLength; j++)
                 if (myGrid[i][j].getLocation().equals(location)){
@@ -46,6 +41,7 @@ public class Board {
        return myGrid[row][column];
     }
 
+    //temporary don't need when GUI is working
     public void displayBoard(){
         for (int i = 0; i < myLength; i++){
             for (int j = 0; j < myLength; j++){
