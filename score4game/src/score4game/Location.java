@@ -1,9 +1,6 @@
 package score4game;
 
-/**
- *
- * @author Asif
- */
+
 public class Location {
     private char myRow;
     private int myColumn;

@@ -2,10 +2,22 @@ package score4game;
 
 import java.util.Scanner;
 import java.io.PrintWriter;
+import javax.swing.JFrame;
+import javax.swing.SwingUtilities;
 
 public class Referee {
     
     public static void main (String [] args){
+        SwingUtilities.invokeLater(new Runnable() {
+            @Override
+            public void run() {
+                createView();
+            } 
+        });
+        setup();
+    }
+    
+    public static void setup() {
         char humanColor;
         char aiColor;
         String currentMove;
@@ -61,5 +73,15 @@ public class Referee {
         myGame.displayBoard(); 
         System.out.print("Winner:");
         System.out.println((myGame.getOppositePlayer(currentPlayer)).getColor());
+    }
+    
+    public static void createView() {
+        JFrame frame = new JFrame(); 
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setSize(450, 450);
+        frame.setTitle("Peg 4 Game");
+        frame.setLocationRelativeTo(null);
+        frame.setResizable(false);
+        frame.setVisible(true);
     }
 }
