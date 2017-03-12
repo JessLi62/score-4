@@ -76,11 +76,12 @@ public class Moves {
         return listOfMoves.get(0);
     }
 
-    private boolean isLineComplete(Board gameBoard, Colour color) {
-        switch (color) {
-            case BLACK:
+    
+    private boolean isLineComplete(Board gameBoard, Colour color){
+        switch (color){
+            case BLACK: 
                 return gameBoard.isBlackWin();
-            case WHITE:
+            case WHITE: 
                 return gameBoard.isWhiteWin();
         }
         return false; // throw exception?
