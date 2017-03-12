@@ -20,7 +20,7 @@ public class Moves {
         return numberOfMoves;
     }
     
-    public Location getMove(Board gameBoard, Color playerColor){
+    public Location getMove(Board gameBoard, Colour playerColor){
         
         Boolean moveFound = false;
         Location moveToMake;
@@ -70,7 +70,7 @@ public class Moves {
     }
     
     
-    private boolean isLineComplete(Board gameBoard, Color color){
+    private boolean isLineComplete(Board gameBoard, Colour color){
         switch (color){
             case BLACK: return gameBoard.isBlackWin();
             case WHITE: return gameBoard.isWhiteWin();
