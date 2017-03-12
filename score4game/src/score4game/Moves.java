@@ -86,4 +86,3 @@ public class Moves {
         }
         return false; // throw exception?
     }
-}
