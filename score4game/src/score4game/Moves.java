@@ -1,9 +1,6 @@
 package score4game;
 
-import java.awt.Color;
 import java.util.ArrayList;
-import static score4game.Colour.BLACK;
-import static score4game.Colour.WHITE;
 
 public class Moves {
 
@@ -25,7 +22,7 @@ public class Moves {
         return numberOfMoves;
     }
 
-    public Location getMove(Board gameBoard, Color playerColor) {
+    public Location getMove(Board gameBoard, Colour playerColor) {
 
         Boolean moveFound = false;
         Location moveToMake;
@@ -79,7 +76,7 @@ public class Moves {
         return listOfMoves.get(0);
     }
 
-    private boolean isLineComplete(Board gameBoard, Color color) {
+    private boolean isLineComplete(Board gameBoard, Colour color) {
         switch (color) {
             case BLACK:
                 return gameBoard.isBlackWin();

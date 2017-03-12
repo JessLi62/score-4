@@ -52,7 +52,7 @@ public class Peg {
             peg[i] = 'n';
     }
     
-    private boolean isFull(){
+    public boolean isFull(){
         return peg.length != 'n';
     }
 }
