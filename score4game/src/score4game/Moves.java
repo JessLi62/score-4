@@ -3,11 +3,9 @@ package score4game;
 import java.util.ArrayList;
 
 public class Moves {
-    Board movesBoard = new Board();
     private ArrayList<Location> listOfMoves = new ArrayList();
-    private ArrayList <Location> movesMade = new ArrayList();// necessary?
-    private Colour myColor;
-    private int numberOfMoves;
+    
+    private int numberOfMoves;//?irrelevant?
     
     public Moves(){
         
@@ -18,65 +16,51 @@ public class Moves {
         }
     }
     
-    public void setMyColor(Colour color){
-        myColor = color;
-    }
-    
-    public Colour getMyColor(){
-        return myColor;
-    }
-    
-    public void addMove(Location location, Colour color){
-        movesBoard.addBead(location, color);
-        movesMade.add(location);
-        numberOfMoves++;
-    }
-    
     public int getMovesMade(){
         return numberOfMoves;
     }
     
-    public Location getMove(){
+    public Location getMove(Board gameBoard, Color playerColor){
         
         Boolean moveFound = false;
         Location moveToMake;
         
         while (!moveFound){
            
-            movesBoard.displayBoard();
+            gameBoard.displayBoard();
             
             for (int i = 0; i< listOfMoves.size(); i++){
                 moveToMake = listOfMoves.get(i);
-                if (!(movesBoard.getPeg(moveToMake).isFull()))
-                    movesBoard.addBead(moveToMake, myColor);
+                if (!(gameBoard.getPeg(moveToMake).isFull()))
+                    gameBoard.addBead(moveToMake, playerColor);
                 else
                     continue;
                 
-                if (isLineComplete(myColor))
+                if (isLineComplete(gameBoard, playerColor))
                     return moveToMake;
                 
-                movesBoard.removeBead(moveToMake);
+                gameBoard.removeBead(moveToMake);
             }
             
             for (int i = 0; i< listOfMoves.size(); i++){   
                 moveToMake = listOfMoves.get(i);
                 
-                if (!(movesBoard.getPeg(moveToMake).isFull()))
-                    movesBoard.addBead(moveToMake, myColor.getOppositeColor());
+                if (!(gameBoard.getPeg(moveToMake).isFull()))
+                    gameBoard.addBead(moveToMake, playerColor.getOppositeColor());
                 else
                     continue;
                 
-                if (isLineComplete(myColor.getOppositeColor())){
-                    movesBoard.removeBead(moveToMake);
-                    movesBoard.addBead(moveToMake, myColor);
+                if (isLineComplete(gameBoard, playerColor.getOppositeColor())){
+                    gameBoard.removeBead(moveToMake);
+                    gameBoard.addBead(moveToMake, playerColor);
                     return moveToMake;}
                 
-                movesBoard.removeBead(moveToMake);
+                gameBoard.removeBead(moveToMake);
             }
             
             for (int i=0; i < listOfMoves.size(); i++){
-                if ((movesBoard.getPeg(listOfMoves.get(i))).isFull()== false){
-                    movesBoard.addBead(listOfMoves.get(i), myColor);
+                if ((gameBoard.getPeg(listOfMoves.get(i))).isFull()== false){
+                    gameBoard.addBead(listOfMoves.get(i), playerColor);
                     return listOfMoves.get(i);
                 }}
             
@@ -86,10 +70,10 @@ public class Moves {
     }
     
     
-    private boolean isLineComplete(Colour color){
+    private boolean isLineComplete(Board gameBoard, Color color){
         switch (color){
-            case BLACK: return movesBoard.isBlackWin();
-            case WHITE: return movesBoard.isWhiteWin();
+            case BLACK: return gameBoard.isBlackWin();
+            case WHITE: return gameBoard.isWhiteWin();
         }
         return false; // throw exception?
     }
