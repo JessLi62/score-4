@@ -1,0 +1,81 @@
+run:
+play black;
+ok;
+note: white plays b4;
+ok.
+move;
+
+//It shows the board before its made its move. will remove display once hooked to GUI
+nnnn  nnnn  nnnn  nnnn  
+
+nnnn  nnnn  nnnn  nnnW  
+
+nnnn  nnnn  nnnn  nnnn  
+
+nnnn  nnnn  nnnn  nnnn  
+
+a1
+note: white plays b4;
+ok.
+move;
+nnnB  nnnn  nnnn  nnnn  
+
+nnnn  nnnn  nnnn  nnWW  
+
+nnnn  nnnn  nnnn  nnnn  
+
+nnnn  nnnn  nnnn  nnnn  
+
+a1
+note: white plays b4;
+ok.
+move;
+nnBB  nnnn  nnnn  nnnn  
+
+nnnn  nnnn  nnnn  nWWW  
+
+nnnn  nnnn  nnnn  nnnn  
+
+nnnn  nnnn  nnnn  nnnn  
+
+b4
+note: white plays c3;
+ok.
+move;
+nnBB  nnnn  nnnn  nnnn  
+
+nnnn  nnnn  nnnn  BWWW  
+
+nnnn  nnnn  nnnW  nnnn  
+
+nnnn  nnnn  nnnn  nnnn  
+
+a1
+note: white plays c4;
+ok.
+move;
+nBBB  nnnn  nnnn  nnnn  
+
+nnnn  nnnn  nnnn  BWWW  
+
+nnnn  nnnn  nnnW  nnnW  
+
+nnnn  nnnn  nnnn  nnnn  
+
+Thought my win// ignore this. was for testing
+a1
+note: white plays b4;
+ok.
+move;
+BBBB  nnnn  nnnn  nnnn  
+
+nnnn  nnnn  nnnn  BWWW  
+
+nnnn  nnnn  nnnW  nnnW  
+
+nnnn  nnnn  nnnn  nnnn  
+
+Thought my win
+a2
+quit;
+BUILD SUCCESSFUL (total time: 1 minute 19 seconds)
