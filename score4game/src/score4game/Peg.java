@@ -47,12 +47,20 @@ public class Peg {
         return beads;
     }
     
-    public void clearPeg(){
+    public void resetPeg(){
         for (int i = 0; i < peg.length; i++)
             peg[i] = 'n';
     }
     
-    private boolean isFull(){
-        return peg.length != 'n';
+    public boolean isFull(){
+        return peg[peg.length-1] != 'n';
+    }
+    
+    public void removeBead(){
+        for (int i = peg.length-1; i >= 0; i--)
+            if (peg[i]!= 'n'){
+                peg[i]= 'n';
+                return;
+            }
     }
 }
