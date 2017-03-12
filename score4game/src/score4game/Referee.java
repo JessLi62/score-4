@@ -80,7 +80,7 @@ public class Referee {
         JFrame frame = new JFrame(); 
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setSize(450, 450);
-        frame.setTitle("Peg 4 Game");
+        frame.setTitle("Score 4 Game");
         frame.setLocationRelativeTo(null);
         frame.setResizable(false);
         frame.setVisible(true);
