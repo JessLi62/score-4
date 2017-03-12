@@ -6,15 +6,13 @@ public class Game {
     private Player whitePlayer;
     private boolean isDraw = false;
     private boolean isFinished = false;
-    private Lines[] myLines;
+    
     private int numberOfMoves;
     
     //keep board size to 4*4
     public Game(){
         numberOfMoves = 0;
         myBoard = new Board (); //create a board
-        myLines = new Lines[]{new HorizontalLines(), new VerticalLines(), new StraightDiagonalLines(),
-                    new DiagonalSingleSkew(), new DiagonalDoubleSkew()};
     }
     
     public void makeMove(String location, Player current){
@@ -32,21 +30,17 @@ public class Game {
     }
     
     public boolean isWhiteWin(){
-        for (Lines thisLine:myLines){
-            if (thisLine.isWhiteLine(myBoard)){
-                isFinished = true;
-                return true;
-            }
+        if (myBoard.isWhiteWin()){
+            isFinished = true;
+            return true;
         }
         return false;
     }
     
     public boolean isBlackWin(){
-        for (Lines thisLine:myLines){
-            if (thisLine.isBlackLine(myBoard)){
-                isFinished = true;
-                return true;
-            }
+        if (myBoard.isBlackWin()){
+            isFinished = true;
+            return true;
         }
         return false;
     }
@@ -65,6 +59,10 @@ public class Game {
         if (current.equals(blackPlayer))
                 return whitePlayer;
         return blackPlayer;
+    }
+    
+    public void resetGame(){
+        myBoard.resetBoard();
     }
     
     //remove when we get GUI working
